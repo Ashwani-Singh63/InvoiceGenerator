@@ -1,7 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
 
 function App() {
   const [item, setItem] = useState([]);
@@ -29,7 +26,7 @@ function App() {
 
     setItem( (prewItem) => [ ...prewItem, newItem])
 
-    // reset from field
+    // reset form field
     setItemName("")
     setQuantity(0)
     setPrice(0)
@@ -121,7 +118,7 @@ function App() {
         onSubmit={handleSubmit}
         className=""
       >
-            <div className="flex items-start flex-col  gap-4  my-4 sm:mx-0 md:w-[500px] w-[300px] ">
+            <div className="flex items-start flex-col  gap-2  my-4 sm:mx-0 md:w-[500px] w-[300px] ">
               <label className="text-white text-md tracking-widest">Item Name :</label>
 
               <input
@@ -175,7 +172,7 @@ function App() {
       </div>
 
       <div className="text-center items-center mx-10 ">
-        <h2 className="text-3xl text-white font-bold tracking-widest p-8 mb-4 ">Invoice Details</h2>
+        <h2 className="text-2xl text-white font-bold tracking-widest p-8 mb-4 ">Invoice Details</h2>
 
         {
           item.length > 0 ?
@@ -218,7 +215,15 @@ function App() {
           )
         }
 
-        <h3 className="text-lg font-bold text-white">Total Invoice Amount: &#8377;{totalInvoiceAmount.toFixed(2)}</h3>
+        {
+          item.lenght > 0 ? (
+            <h3 className="text-lg font-bold text-white">Total Invoice Amount: &#8377;{totalInvoiceAmount.toFixed(2)}</h3>
+          )
+          :
+          (
+            ""
+          )
+        }
 
       </div>
 
@@ -226,7 +231,7 @@ function App() {
       {
         item.length > 0 ? (
           <button 
-            className="bg-purple-500 text-white text-xl tracking-widest mx-4 px-4 p-2 rounded-lg font-bold hover:bg-purple-600 mt-4"
+            className="bg-purple-500 text-white text-xl tracking-widest mx-10 px-4 p-2 rounded-lg font-bold hover:bg-purple-600 mt-4"
             onClick={handlePrintInvoice}
             // disabled = {item.lenght === 0}
           >
