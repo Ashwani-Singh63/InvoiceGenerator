@@ -215,8 +215,13 @@ function App() {
           )
         }
 
+        
+
+      </div>
+
+      <div className="flex mx-10 justify-end">
         {
-          item.lenght > 0 ? (
+          item.length > 0 ? (
             <h3 className="text-lg font-bold text-white">Total Invoice Amount: &#8377;{totalInvoiceAmount.toFixed(2)}</h3>
           )
           :
@@ -224,7 +229,6 @@ function App() {
             ""
           )
         }
-
       </div>
 
       
